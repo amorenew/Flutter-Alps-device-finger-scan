@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: __local_aars__:D.\Workspaces\Cordova WS\alps_finger_scan\android\libs\usb06fp.jar:unspecified@jar" type="AndroidModuleLibraryType">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android/libs/usb06fp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

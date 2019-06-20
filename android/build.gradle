@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
@@ -27,8 +27,69 @@ android {
     defaultConfig {
         minSdkVersion 16
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//
+//       ndk {
+//           if (project.hasProperty('target-platform') &&
+//                   project.property('target-platform') == 'android-arm64') {
+//               abiFilters 'arm64-v8a'
+//           } else {
+//               abiFilters 'armeabi-v7a'
+//           }
+//       }
     }
     lintOptions {
         disable 'InvalidPackage'
     }
+
+//    splits {
+//
+//        // Configures multiple APKs based on ABI.
+//        abi {
+//
+//            // Enables building multiple APKs per ABI.
+//            enable true
+//
+//            // By default all ABIs are included, so use reset() and include to specify that we only
+//            // want APKs for x86 and x86_64.
+//
+//            // Resets the list of ABIs that Gradle should create APKs for to none.
+//            reset()
+//
+//            // Specifies a list of ABIs that Gradle should create APKs for.
+//            include  "armeabi"
+//
+//            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+//            universalApk true
+//        }
+//    }
+}
+
+//project.afterEvaluate {
+//    assembleRelease.doLast {
+//        String src
+//        if(project.hasProperty('target-platform') &&
+//                project.property('target-platform') == 'android-arm64') {
+//            // If we are building the 64bit then we also want to add the 32bit libflutter.so
+//            src = "$flutterRoot/bin/cache/artifacts/engine/android-arm-release/flutter.jar"
+//        }else{
+//            // If we are building the opposite (32bit), we include the 64bit libflutter.so
+//            src = "$flutterRoot/bin/cache/artifacts/engine/android-arm64-release/flutter.jar"
+//        }
+//        copy {
+//            from zipTree(src)
+//            include 'lib/*/libflutter.so'
+//            into "$buildDir/intermediates/jniLibs/release/0/"
+//        }
+//    }
+//}
+
+dependencies {
+   //libraries for alps device finger print
+   implementation files('libs/serialport.jar')
+   implementation files('libs/usb06fp.jar')
+
+    //rx Android for updating finger status
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+
 }

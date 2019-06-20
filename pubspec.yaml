@@ -1,6 +1,6 @@
 name: alps_finger_scan
-description: A new Flutter plugin.
-version: 0.0.1
+description: This is a Flutter plugin for supporting Fingerprint to tablet Model. Alps ax6737_65_n
+version: 0.0.2
 author: Amr Eniou <amorenew@gmail.com>
 homepage: https://github.com/amorenew/Flutter-Alps-device-finger-scan
 

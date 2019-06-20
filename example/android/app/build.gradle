@@ -41,6 +41,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+     defaultConfig {
+         ndk {
+             abiFilters 'armeabi-v7a'
+         }
+     }
 //     packagingOptions {
 //        exclude 'lib/x86/libflutter.so'
 //        exclude 'lib/x86_64/libflutter.so'
